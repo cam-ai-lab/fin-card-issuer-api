@@ -1,8 +1,28 @@
-# Credit Card Issuer API
+# fin-card-issuer-api
 
-[![API Quality Gates](https://github.com/cam-ai-lab/dummy-card-issuer-api/actions/workflows/quality-gates.yml/badge.svg)](https://github.com/cam-ai-lab/dummy-card-issuer-api/actions/workflows/quality-gates.yml)
+[![API Quality Gates](https://github.com/cam-ai-lab/fin-card-issuer-api/actions/workflows/quality-gates.yml/badge.svg)](https://github.com/cam-ai-lab/fin-card-issuer-api/actions/workflows/quality-gates.yml)
 
 A Fastify-based REST API for managing credit card accounts with comprehensive API governance using Spectral linting.
+
+## What it is
+
+A deliberately dummy credit-card account API used to practise API governance rather than card-issuing logic. One Fastify + TypeScript endpoint (`GET /credit-cards/{accountId}`) plus a health check is described in `openapi.yaml`, and a Spectral ruleset (`.spectral.yml`) enforces naming and design rules in the `API Quality Gates` GitHub Actions workflow. `sample-issue.md` is a feature request (a `minimumDue` field) drafted to exercise that workflow.
+
+## Status
+
+active (dormant). All work happened on 2025-07-14 (initial API, Spectral workflow fixes, badge, Copilot instructions, sample issue); idle since. There is no test suite (`npm test` is the npm placeholder).
+
+## Layout
+
+```
+src/index.ts                    Fastify server and the credit-card endpoint
+openapi.yaml                    API contract linted by Spectral
+openapi-test*.yaml              fixtures with and without rule violations
+.spectral.yml                   governance ruleset
+.github/workflows/quality-gates.yml  Spectral CI
+scripts/setup-branch-protection.sh   gh-based branch protection helper
+sample-issue.md                 example feature request (minimumDue)
+```
 
 ## 🚀 Features
 
@@ -55,7 +75,7 @@ GET /health
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd dummy-card-issuer-api
+cd fin-card-issuer-api
 
 # Install dependencies
 npm install
@@ -165,7 +185,7 @@ The project includes comprehensive GitHub Actions workflows:
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/yourusername/dummy-card-issuer-api.git
+   git remote add origin https://github.com/yourusername/fin-card-issuer-api.git
    git push -u origin main
    ```
 
