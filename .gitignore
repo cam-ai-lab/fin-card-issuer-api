@@ -182,3 +182,18 @@ jest.config.js.bak
 *.key
 *.crt
 *.csr
+
+# ~/code reorg baseline
+.venv/
+venv/
+.conda/
+target/
+.gradle/
+.next/
+.turbo/
+__pycache__/
+*.pyc
+.env.*
+*.pickle
+token.json
+.idea/
