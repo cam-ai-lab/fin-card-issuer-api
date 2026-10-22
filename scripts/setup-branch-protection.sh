@@ -5,7 +5,7 @@
 # Run this after creating your GitHub repository
 
 REPO_OWNER="your-github-username"
-REPO_NAME="dummy-card-issuer-api"
+REPO_NAME="fin-card-issuer-api"
 BRANCH="main"
 
 echo "Setting up branch protection for $REPO_OWNER/$REPO_NAME on branch $BRANCH"
